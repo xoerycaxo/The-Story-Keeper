@@ -3,7 +3,7 @@
     --first: #F9F7F7;
     --second:#DBE2EF;
     --third:#3F72AF;
-    --forth:#112D4E;
+    --fourth:#112D4E;
     --fifth: #fdfdfd62;
 }
 *{
@@ -18,7 +18,7 @@ body{
 }
 
 .form{
-    color: var(--forth);
+    color: var(--fourth);
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -34,7 +34,7 @@ body{
     height: 350px;
     position: relative;
     margin: auto;
-    box-shadow: 8px 8px 30px 3px var(--forth);
+    box-shadow: 8px 8px 30px 3px var(--fourth);
 }
 .title{
     font-size: 30px;
@@ -42,7 +42,7 @@ body{
     padding-bottom: 10px;
     margin-left: 75px;
     margin-top: -20px;
-    color: var(--forth);
+    color: var(--fourth);
 }
 .box{
     width: 300px;
@@ -72,9 +72,9 @@ body{
     margin-bottom:-15px ;
 }
 .btn-log{
-    background-color: var(--forth);
+    background-color: var(--fourth);
     color: var(--first);
-    border: solid 5px var(--forth);
+    border: solid 5px var(--fourth);
     border-radius: 15px;
     max-width: 300px;
     font-size: 16px;
@@ -102,7 +102,7 @@ img{
     padding-bottom: 10px;
     margin-left: 55px;
     margin-top: -20px;
-    color: var(--forth);
+    color: var(--fourth);
 }
 .wrapper2{
     background-color: var(--fifth);
@@ -110,12 +110,12 @@ img{
     height: 400px;
     position: relative;
     margin: auto;
-    box-shadow: 8px 8px 30px 3px var(--forth);
+    box-shadow: 8px 8px 30px 3px var(--fourth);
 }
 .btn-submit{
-    background-color: var(--forth);
+    background-color: var(--fourth);
     color: var(--first);
-    border: solid 5px var(--forth);
+    border: solid 5px var(--fourth);
     border-radius: 15px;
     max-width: 300px;
     font-size: 16px;
@@ -174,14 +174,14 @@ img{
     color: var(--second);
     background: linear-gradient(91.3deg, rgb(2, 41, 86) 1.5%, rgb(19, 48, 142) 100.3%);
     padding: 5px;
-    border: 2px solid var(--forth);
+    border: 2px solid var(--fourth);
     border-radius: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     max-width: 200px;
     margin-top: 25px;
-    box-shadow: 6px 8px 20px var(--forth)
+    box-shadow: 6px 8px 20px var(--fourth)
     
 }
 .register:hover{
@@ -228,18 +228,76 @@ img{
         color: var(--second);
         background: linear-gradient(91.3deg, rgb(2, 41, 86) 1.5%, rgb(19, 48, 142) 100.3%);
         padding: 5px;
-        border: 2px solid var(--forth);
+        border: 2px solid var(--fourth);
         border-radius: 10px;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         max-width: 200px;
         margin-top: 25px;
-        box-shadow: 6px 8px 20px var(--forth)
+        box-shadow: 6px 8px 20px var(--fourth)
         
     }
     .register:hover{
         background: linear-gradient(91.3deg, rgb(14, 48, 86) 1.5%, rgb(42, 78, 198) 100.3%);
         color: var(--second);
     }
+}
+
+/*search section*/
+.search-bar{
+    font-size: 15px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 8px;
+    position: relative;
+    margin-left: 400px;
+    margin-top: 50px;
+    width: 30%;
+    border: solid var(--second) 2px;
+    border-radius: 4px;
+}
+.search-btn{
+padding: 8px 20px;
+background: transparent;
+border: var(--first) solid 2px;
+color: var(--first);
+}
+footer{
+    background-color: transparent;
+    height: 40px;
+    margin-top: 150px;
+}
+nav{
+    height: 50px;
+    background-color: var(--fourth);
+    margin: 7px 0;
+}
+header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+}
+header nav ul li{
+    display: flex;
+    padding: 10px 15px; 
+    font-weight: lighter;
+    font-size: 20px;
+    text-decoration: none; 
+    position: relative;
+    right: 40px;
+}
+header a{
+    color: aliceblue;
+}
+header h1{
+    color: var(--first);
+    font-weight: bold;
+    font-size: 36px;
+    margin-right: 950px;
+    padding: 5px;
+    position: absolute;
+    right: 40px;
 }
