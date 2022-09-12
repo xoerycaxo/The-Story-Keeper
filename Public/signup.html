@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign-up</title>
+    <link href="./assets/css/styles.css" rel="stylesheet" type="text/css" />
+    <link href="./assets/img/favicon.ico" rel="icon" type="image/x-icon" />
+  </head>
+  <body>
+    
+    <!--action link needs to be replaced for heroku login link and add validation to inputs-->
+    <div class="wrapper2">
+        <img src="./assets/img/open-book.png" height="105px"/>
+      <form
+        action="http://127.0.0.1:5500/Public/login.html"
+        class="form"
+        method="get"
+        id="signup"
+      >
+        <h4 class="title2">Create Account</h4>
+        <input
+        class="box"
+        type="text"
+        name="name"
+        size="15"
+        maxlength="30"
+        placeholder=" name"
+      />
+        <input
+          class="box"
+          type="email"
+          name="email"
+          id="email"
+          maxlength="30"
+          size="15"
+          placeholder=" email"
+        />
+        <input
+          class="box"
+          type="password"
+          name="password"
+          size="15"
+          maxlength="30"
+          placeholder=" password"
+        />
+        <input
+          class="box"
+          type="password"
+          name="password"
+          size="15"
+          maxlength="30"
+          placeholder=" confirm password"
+        />
+        <br />
+        <button class="btn-submit" type="submit" name="submit">Submit</button>
+        <p class="ask2"> Already have an account?</p><br/>
+        <a class="login-link" href="./login.html">Log in</a>
+      </form>
+    </div>
+  </body>
+  <footer></footer>
+</html>
