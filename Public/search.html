@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Story Keeper</title>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link href="./assets/img/favicon.ico" rel="icon" type="image/x-icon" />
+    <link href="./assets/css/carousel.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.js" />
+  </head>
+  <body>
+    <header>
+        <div>
+
+            <h1>Story Keeper</h1>
+
+        </div>
+        <nav>
+            <ul>
+                <li><a href="">
+                        <in>My Reading List</in>
+                    </a></li>
+                <li><a href="">
+                        <in>Wish List</in>
+                    </a></li>
+                <li><a href="">
+                        <in>Log Out</in>
+                    </a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="search">
+      <input
+        type="text"
+        name="search"
+        size="15"
+        maxlength="30"
+        placeholder=" Search"
+        class="search-bar"
+      />
+      <button type="submit" class="search-btn" >Search</button>
+    </div>
+
+<!-- Flickity HTML init -->
+<div class="gallery js-flickity"
+  data-flickity-options='{ "wrapAround": true }'>
+  <div class="gallery-cell"></div>
+  <div class="gallery-cell"></div>
+  <div class="gallery-cell"></div>
+  <div class="gallery-cell"></div>
+  <div class="gallery-cell"></div>
+</div>
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+  </body>
+  <footer>
+
+  </footer>
+</html>
