@@ -1,0 +1,6 @@
+CREATE TABLE mybooks (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(30) NOT NULL,
+    author VARCHAR(30) NOT NULL,
+    genre VARCHAR(30) NOT NULL
+);
