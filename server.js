@@ -20,6 +20,12 @@ const db = mysql.createConnection(
     console.log(`Connected to mystories database.`)
 );
 
+//app.get("/H", (req, res)=>{
+    //res.json(
+   //     "Server is running"
+   // )
+//})
+
 // //test connection (successful)
 // app.get("/", (req, res)=>{
 //     res.json({
