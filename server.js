@@ -1,14 +1,13 @@
-const express = require('express');
-const {books} = require('./db/db.json');
-const fs = require('fs');
-const path = require('path');
+const express = require("express");
+const { books } = require("./db/db.json");
+const fs = require("fs");
+const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 // app.use(express.urlencoded({ extended: true }))
 // app.use(express.json())
 // app.use(express.static('Public'))
-
 
 // function findAll(query, booksArray) {
 //     let filteredResults = booksArray
@@ -27,8 +26,6 @@ const PORT = process.env.PORT || 3001;
 //         JSON.stringify({books: booksArray}, null, 2),
 //     ); return note
 // }
-
-
 
 // app.get('/api/books', (req, res) => {
 //     let results = books
@@ -55,5 +52,6 @@ const PORT = process.env.PORT || 3001;
 //     res.sendFile(path.join(__dirname, 'public/mybooks.html'))
 // })
 
-
-app.listen(PORT, () => {  console.log(`API server now on port ${PORT}!`)});
+app.listen(PORT, () => {
+  console.log(`API server now on port ${PORT}!`);
+});
