@@ -15,7 +15,7 @@ const db = mysql.createConnection(
     {
         host: 'localhost',
         user: 'root',
-        password: "assyen74",
+        password: "password",
         database: 'mystories'
     },
     console.log(`Connected to mystories database.`)
