@@ -12,3 +12,4 @@ CREATE TABLE users(
     email VARCHAR(30) NOT NULL,
     passwords VARCHAR(30) NOT NULL
 );
+
