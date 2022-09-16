@@ -1,8 +1,3 @@
-document.querySelector('#submit')
-.addEventListener('click', () => {
-	window.location.replace("/Public/search.html");
-});
-
 const mysql = require('mysql');
 const express = require('express');
 const session = require('express-session');
@@ -28,13 +23,13 @@ app.use(express.static(path.join(__dirname, 'static')));
 
 app.get('/', function(request, response) {
 	// Render login template
-	response.sendFile(path.join(__dirname + 'Public/login.html'));
+	response.sendFile(path.join(__dirname + '/login.html'));
 });
 
 app.post('/auth', function(request, response) {
 	// Capture the input fields
-	let username = request.body.username;
-	let password = request.body.password;
+	let username = request.body.email;
+	let password = request.body.passwords;
 	// Ensure the input fields exists and are not empty
 	if (username && password) {
 		// Execute SQL query that'll select the account from the database based on the specified username and password

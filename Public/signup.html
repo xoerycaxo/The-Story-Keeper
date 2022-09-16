@@ -14,9 +14,9 @@
     <div class="wrapper2">
         <img src="./assets/img/open-book.png" height="105px"/>
       <form
-        action="http://127.0.0.1:5500/Public/login.html"
+        action="/add"
         class="form"
-        method="get"
+        method="post"
         id="signup"
       >
         <h4 class="title2">Create Account</h4>
@@ -24,10 +24,19 @@
         class="box"
         type="text"
         id="name"
-        name="name"
+        name="first_name"
         size="15"
         maxlength="30"
         placeholder=" name"
+      />
+      <input
+        class="box"
+        type="text"
+        id="name"
+        name="last_name"
+        size="15"
+        maxlength="30"
+        placeholder=" last name"
       />
         <input
           class="box"
@@ -41,7 +50,7 @@
         <input
           class="box"
           type="password"
-          name="password"
+          name="passwords"
           size="15"
           maxlength="30"
           placeholder=" password"
