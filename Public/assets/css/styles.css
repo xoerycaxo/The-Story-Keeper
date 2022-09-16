@@ -310,7 +310,7 @@ header h1{
     color: var(--first);
     font-weight: bold;
     font-size: 36px;
-    margin-right: 88%;
+    margin-right: 83%;
     padding: 5px;
     position: absolute;
     right: 40px;
@@ -385,3 +385,53 @@ header h1{
     display: none;
 
  }
+ /*MY BOOKS SECTION*/
+ .books-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: var(--fourth);
+    text-align: center;
+    margin-top: 2%;
+ }
+ .books-list ul li{
+    list-style: none;
+ }
+ .books{
+    background: linear-gradient(112.4deg, rgb(174, 196, 225) 44.9%, rgb(135, 197, 235) 94.5%);
+    height: 150px;
+    width: 500px;
+    border: none;
+    border-radius: 15px;
+    margin-top: 2%;
+    border-left: solid 7px var(--second);
+    text-align: left;
+    padding-left: 45px;
+ }
+ .books:hover{
+    border-left: solid 7px #1c406a;
+    transition: .5s ease-in-out;
+ }
+ .book-title{
+    position: relative;
+    padding-top: 8%;
+    font-size: 30px;
+ }
+.books-list h2{
+    position: relative;
+    font-size: 35px;
+    border-bottom: #112D4E solid 2px;
+    padding: 5px;
+    width: 250px;
+    margin-left: 10px;
+    color: var(--fourth);
+    text-align: left;
+}
+.books img{
+    height: 140px;
+    position: relative;
+    left: 220px;
+    bottom: 45px;
+    border: none;
+    border-radius: 15px; 
+}
