@@ -97,7 +97,7 @@ To install the project follow these steps:
 
     ## Screenshot
     
-    ![Sreenshot](./assets/img/login.png)
+    ![Sreenshot](./public/assets/img/login.png)
 
   
 
