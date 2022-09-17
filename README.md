@@ -76,21 +76,21 @@ To install the project follow these steps:
 
    ## Collaborator-Roles
 
-    * Eryca (Lead): Github creator and manager, README, Git issues, User Stoy and criteria.
+ * Eryca(Lead): Github creator and manager, README, Git issues, User Stoy and criteria.
 
-    https://ucfvirtbofsfp-ybx2807.slack.com/team/U03J883S23Z
+   https://ucfvirtbofsfp-ybx2807.slack.com/team/U03J883S23Z
 
-    * Chloe: CSS, Node and Express.js, Handlebars.
+ * Chloe: CSS, Node and Express.js, Handlebars.
 
    https://ucfvirtbofsfp-ybx2807.slack.com/team/U03JAS6DABG
 
-    * Zoey: MySQL, Heroku, New Technology.
+ * Zoey: MySQL, Heroku, New Technology.
 
    https://ucfvirtbofsfp-ybx2807.slack.com/team/U03JG860R1U
 
-    * Paolo: Javascript
+ * Paolo: Javascript
 
-    https://ucfvirtbofsfp-ybx2807.slack.com/team/U03HX4WSA14
+   https://ucfvirtbofsfp-ybx2807.slack.com/team/U03HX4WSA14
 
 
 
