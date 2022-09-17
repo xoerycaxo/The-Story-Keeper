@@ -92,14 +92,13 @@ To install the project follow these steps:
 
    https://ucfvirtbofsfp-ybx2807.slack.com/team/U03HX4WSA14
 
-  ![create ](https://user-images.githubusercontent.com/100622402/190875318-5808cce2-1af0-4f8a-af78-4c244e323178.png)
 
 
 
     ## Screenshots
     ![login](https://user-images.githubusercontent.com/100622402/190875289-eb949c4b-458b-4fd3-bf78-acf5613992cc.png)
     
-
+    ![create ](https://user-images.githubusercontent.com/100622402/190875318-5808cce2-1af0-4f8a-af78-4c244e323178.png)
     
 
   
