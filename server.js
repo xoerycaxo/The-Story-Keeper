@@ -6,7 +6,7 @@ require('dotenv').config()
 const mysql = require('mysql2');
 const express = require('express');
 const inputCheck = require('./utils/inputCheck');
-
+var login = require('./src/js/login');
 
 //PORT designation and the app expression
 const PORT = process.env.PORT || 3002;
@@ -122,8 +122,35 @@ app.post('/add', function(req, res){
                 return console.log(err.message);
               }
               
-              res.sendFile(path.join(__dirname,'./Public/login.html'));
+              return res.redirect('login.html');
     });
+});
+app.post('/login', function(request, response) {
+	// Capture the input fields
+	let email = request.body.email;
+	let passwords = request.body.passwords;
+	// Ensure the input fields exists and are not empty
+	if (email && passwords) {
+		// Execute SQL query that'll select the account from the database based on the specified username and password
+		var loginTest = new login(db);
+        loginTest.auth(email,passwords, function (error, result)
+        {
+            if (result){
+                // Authenticate the user
+                //request.session.loggedin = true;
+                //request.session.email = email;
+                    // Redirect to home page
+                    response.redirect('search.html');
+            }  else {
+				response.send('Incorrect Username and/or Password!');
+			}			
+			response.end();
+        });
+        
+	} else {
+		response.send('Please enter Username and Password!');
+		response.end();
+	}
 });
 
 //CREATE myBooks
