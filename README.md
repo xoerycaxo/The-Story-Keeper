@@ -96,6 +96,8 @@ To install the project follow these steps:
 
 
     ## Screenshots
+    ![landing](https://user-images.githubusercontent.com/100622402/190875552-ce4056ec-3532-41e0-946a-2725f93aaf53.png)
+    
     ![login](https://user-images.githubusercontent.com/100622402/190875289-eb949c4b-458b-4fd3-bf78-acf5613992cc.png)
     
     ![create ](https://user-images.githubusercontent.com/100622402/190875318-5808cce2-1af0-4f8a-af78-4c244e323178.png)
