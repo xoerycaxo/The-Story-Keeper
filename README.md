@@ -103,4 +103,11 @@ To install the project follow these steps:
 
     ## Contact-Information
     
+    If you have any questions you can contact us on slack but if email is better: 
+    
+    Eryca: [xoerycaxo@gmail.com](#xoerycaxo@gmail.com)
+    Chloe: [chloebyrnesash@gmail.com](#chloebyrnesash@gmail.com)
+    Zoey: [nashalysf@gmail.com](#nashalysf@gmail.com)
+    Paolo:[ayaladuvan876@gmail.com](#ayaladuvan876@gmail.com)
+    
 
