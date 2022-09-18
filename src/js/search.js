@@ -82,8 +82,8 @@ $(document).ready(function() {
        var viewUrl = 'mybooks.html?isbn='+bookIsbn; //constructing link for bookviewer
        var viewUrl2 = 'myreadinglist.html?isbn='+bookIsbn; //constructing link for bookviewer
        var htmlCard = `
-       <div class="col-lg-6">
-         <div class="card" style="">
+       <div class="searcharea-output-section">
+         <div class="searchcards" style="">
            <div class="row no-gutters">
              <div class="col-md-4">
                <img src="${bookImg}" class="card-img" alt="...">
