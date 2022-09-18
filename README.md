@@ -2,7 +2,6 @@
 Project 2
 ## Table of Contents
 * [Description](#Description)
-* [License](#License)
 * [Criteria](#Criteria)
 * [User-Story](#User-Story)
 * [Usage](#Usage)
@@ -13,10 +12,6 @@ Project 2
 ## Description
 
 The Story Keeper is a place to go to make your books more organized. You can store the books you have already read, books you are reading now and books you want to read next. You can use the search bar to look up books. And there is also a place where you can see what others think about that book while putting your own opinion down about the book you read as well. 
-
-## License 
-
-[![License](https://img.shields.io/badge/License-MIT-brightgreen)](https://opensource.org/licenses/MIT)
 
 ## Criteria
 
