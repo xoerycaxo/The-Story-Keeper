@@ -75,15 +75,16 @@ body{
 }
 .addbooksbtn,
 .btn-log{
-    background-color: var(--fourth);
+    background-color: transparent;
     color: var(--first);
     border: solid 5px var(--fourth);
     border-radius: 15px;
     max-width: 300px;
     font-size: 16px;
     letter-spacing: 1px;
+    margin-left: 10px;
 }
-.addbooksbtn,
+
 .btn-log a{
     text-decoration: none;
     background-color: transparent;
@@ -268,18 +269,18 @@ img{
     border: solid var(--second) 2px;
     border-radius: 4px;
 }
-.search-btn{
+.addbooksbtn{
 padding: 6px 20px;
 background: transparent;
-border: var(--first) solid 2px;
-color: var(--first);
+border: var(--third) solid 2px;
+color: var(--third);
 border-radius: 5px;
 font-size: 18px;
 }
 
-.search-btn:hover{
+.addbooksbtn:hover{
     border-color: var(--third);
-    color: var(--third);
+    color: var(--second);
 }
 footer{
     background-color: transparent;
@@ -304,6 +305,7 @@ header nav ul li{
     font-weight: lighter;
     font-size: 20px;
     right: 40px;
+    position: relative;
 }
 header a{
     color: var(--fourth);
@@ -323,6 +325,14 @@ header h1{
     position: absolute;
     right: 40px;
     font-family: Quicksand;
+}
+.text-center{
+font-family: 'Quicksand';
+margin-top: 15px;
+}
+
+.header{
+    color: var(--third);
 }
 .cards{
     background: linear-gradient(67.6deg, rgb(154, 224, 237) 2.8%, rgb(34, 26, 177) 120.4%);
@@ -346,8 +356,16 @@ header h1{
     margin-top: 4%;
 }
 .card-title{
-    margin-top: 8%;
-    font-size: 35px;
+    margin-top: 0;
+    font-size: 30px;
+    position: relative;
+    left: 15px;
+}
+
+h5.card-title{
+    font-size: 30px;
+    max-width: 320px;
+    text-align: center;
 }
 .cards p{
     font-size: 18px;
@@ -451,13 +469,12 @@ header h1{
 
 .addbooksbtn {
     padding-inline: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
     font-family: Segoe UI;
+   
 }
 
 .addbooksbtn:hover {
-    background-color: #3F72AF;
+    background-color: var(--third);
     text-decoration: none;
 }
 
@@ -476,8 +493,13 @@ header h1{
     border: solid #3F72AF;
     max-width:fit-content;
     display: inline-flex;
-    margin: auto 5px;
+    margin: auto 0;
     float: left;
+    z-index: 0;
+    height: 90%;
+    position: relative;
+    left: 25px;
+    top: 30px;
 }
 
 .searcharea-output-section {
