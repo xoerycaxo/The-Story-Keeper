@@ -63,7 +63,7 @@ $(document).ready(function() {
           bookImg2 = (item2.volumeInfo.imageLinks) ? item2.volumeInfo.imageLinks.thumbnail : placeHldr ;
   
           // in production code, item.text should have the HTML entities escaped.
-          outputList.innerHTML += '<div class="row mt-4">' +
+          outputList.innerHTML += '<div class="searcharea">' +
                                   formatOutput(bookImg1, title1, author1, publisher1, bookLink1, bookIsbn) +
                                   formatOutput(bookImg2, title2, author2, publisher2, bookLink2, bookIsbn2) +
                                   '</div>';
@@ -79,8 +79,10 @@ $(document).ready(function() {
      */
      function formatOutput(bookImg, title, author, publisher, bookLink, bookIsbn) {
        // console.log(title + ""+ author +" "+ publisher +" "+ bookLink+" "+ bookImg)
-       var viewUrl = 'book.html?isbn='+bookIsbn; //constructing link for bookviewer
-       var htmlCard = `<div class="col-lg-6">
+       var viewUrl = 'mybooks.html?isbn='+bookIsbn; //constructing link for bookviewer
+       var viewUrl2 = 'myreadinglist.html?isbn='+bookIsbn; //constructing link for bookviewer
+       var htmlCard = `
+       <div class="col-lg-6">
          <div class="card" style="">
            <div class="row no-gutters">
              <div class="col-md-4">
@@ -91,7 +93,8 @@ $(document).ready(function() {
                  <h5 class="card-title">${title}</h5>
                  <p class="card-text">Author: ${author}</p>
                  <p class="card-text">Publisher: ${publisher}</p>
-                 <a target="_blank" href="${viewUrl}" class="btn btn-secondary">Read Book</a>
+                 <a target="_blank" href="${viewUrl}" class="btn btn-secondary">Add Book To My Books</a>
+                 <a target="_blank" href="${viewUrl2}" class="btn btn-secondary">Add Book To My Reading List</a>
                </div>
              </div>
            </div>

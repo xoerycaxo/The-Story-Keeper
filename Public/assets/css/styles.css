@@ -11,6 +11,7 @@
     padding: 0;
     box-sizing: content-box;
 }
+
 body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-attachment: fixed;
@@ -71,6 +72,7 @@ body{
     margin-left: 60px;
     margin-bottom:-15px ;
 }
+.addbooksbtn,
 .btn-log{
     background-color: var(--fourth);
     color: var(--first);
@@ -80,11 +82,13 @@ body{
     font-size: 16px;
     letter-spacing: 1px;
 }
+.addbooksbtn,
 .btn-log a{
     text-decoration: none;
     background-color: transparent;
     border: transparent;
 }
+.addbooksbtn,
 .btn-log:hover {
     background-color: #1c406a;
     border-color: #1c406a;
@@ -271,6 +275,7 @@ color: var(--first);
 border-radius: 5px;
 font-size: 18px;
 }
+
 .search-btn:hover{
     border-color: var(--third);
     color: var(--third);
@@ -278,7 +283,10 @@ font-size: 18px;
 footer{
     background-color: transparent;
     height: 40px;
-    margin-top: 150px;
+    margin-top: 80px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    color: #F9F7F7;
 }
 nav{
     height: 50px;
@@ -307,7 +315,7 @@ header a:hover{
     color: var(--second);
 }
 header h1{
-    color: var(--first);
+    color: var(--fourth);
     font-weight: bold;
     font-size: 36px;
     margin-right: 83%;
@@ -386,6 +394,7 @@ header h1{
 
  }
  /*MY BOOKS SECTION*/
+ .addbooks,
  .books-list{
     display: flex;
     flex-wrap: wrap;
@@ -435,3 +444,34 @@ header h1{
     border: none;
     border-radius: 15px; 
 }
+
+.addbooksbtn {
+    padding-inline: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: Segoe UI;
+}
+
+.addbooksbtn:hover {
+    background-color: #3F72AF;
+}
+
+.listoutput {
+    background-color: #DBE2EF;
+    text-align:center;
+}
+
+.searcharea {
+    display: block;
+}
+
+
+.card-img {
+    display: flex;
+    border: solid #3F72AF;
+    max-width: fit-content;
+    display: inline-flex;
+    margin: auto 5px;
+    float: left;
+}
+
