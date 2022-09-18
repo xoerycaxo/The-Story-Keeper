@@ -454,6 +454,7 @@ header h1{
 
 .addbooksbtn:hover {
     background-color: #3F72AF;
+    text-decoration: none;
 }
 
 .listoutput {
@@ -469,19 +470,20 @@ header h1{
 .card-img {
     display: flex;
     border: solid #3F72AF;
-    max-width: fit-content;
+    max-width:fit-content;
     display: inline-flex;
     margin: auto 5px;
     float: left;
 }
 
 .searcharea-output-section {
-
+    display: flex;
+    justify-content: center;
 }
 
 .searchcards {
-    background: linear-gradient(67.6deg, rgb(154, 224, 237) 2.8%, rgb(51, 105, 166) 120.4%);
-    height: 300px;
+    background: linear-gradient(112.4deg, rgb(174, 196, 225) 44.9%, rgb(135, 197, 235) 94.5%);
+    height: 400px;
     width: 580px;
     padding-top: 20px;
     position: relative;

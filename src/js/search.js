@@ -92,9 +92,9 @@ $(document).ready(function() {
                <div class="card-body">
                  <h5 class="card-title">${title}</h5>
                  <p class="card-text">Author: ${author}</p>
-                 <p class="card-text">Publisher: ${publisher}</p>
-                 <a target="_blank" href="${viewUrl}" class="btn btn-secondary">Add Book To My Books</a>
-                 <a target="_blank" href="${viewUrl2}" class="btn btn-secondary">Add Book To My Reading List</a>
+                 <p class="card-text">Publisher: ${publisher}</p><br />
+                 <a target="_blank" href="${viewUrl}" class="addbooksbtn">Add to My Books</a><br /><br />
+                 <a target="_blank" href="${viewUrl2}" class="addbooksbtn">Add to Reading List</a>
                </div>
              </div>
            </div>
