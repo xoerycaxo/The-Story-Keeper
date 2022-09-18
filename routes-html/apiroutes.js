@@ -7,6 +7,7 @@ app.get("/", (req, res)=>{
 
 //CREATE user
 app.post('/api/users', ({body}, res) => {
+    console.log(body)
     const errors = inputCheck(body, 'first_name', 'last_name', 'email', 'passwords');
     if(errors){
         res.status(400).json({error: errors});
