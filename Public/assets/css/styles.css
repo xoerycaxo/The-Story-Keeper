@@ -495,3 +495,27 @@ header h1{
     box-shadow: 10px 15px 20px 3px var(--fourth);
     
 }
+
+/*BOOK PAGE*/
+
+.bookcontainer {
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.bookpageheader {
+    display: flex;
+    justify-content: center;
+}
+
+.backtosearch {
+    font-size: large;
+    color: #112D4E;
+    padding-top: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    font-weight: 700;
+}
+
