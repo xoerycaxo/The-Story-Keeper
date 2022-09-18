@@ -1,10 +1,20 @@
+var http = require('http');
+var path = require("path");
+var bodyParser = require('body-parser');
+var helmet = require('helmet');
+require('dotenv').config()
 const mysql = require('mysql2');
 const express = require('express');
 const inputCheck = require('./utils/inputCheck');
+var login = require('./src/js/login');
 
 //PORT designation and the app expression
 const PORT = process.env.PORT || 3002;
 const app = express();
+//--
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(express.static(path.join(__dirname,'./public')));
+app.use(helmet());
 
 //express middleware
 app.use(express.urlencoded({extended: false}));
@@ -15,11 +25,17 @@ const db = mysql.createConnection(
     {
         host: 'localhost',
         user: 'root',
-        password: "assyen74",
+        password: process.env.DB_PASSWORD,
         database: 'mystories'
     },
     console.log(`Connected to mystories database.`)
 );
+
+//app.get("/H", (req, res)=>{
+    //res.json(
+   //     "Server is running"
+   // )
+//})
 
 // //test connection (successful)
 // app.get("/", (req, res)=>{
@@ -95,8 +111,49 @@ app.post('/api/users', ({body}, res) => {
     });
 });
 
+app.post('/add', function(req, res){
+  
+    const sql = `INSERT INTO users (first_name, last_name, email, passwords)
+    VALUES (?,?,?,?)`;
+    const params = [req.body.first_name, req.body.last_name, req.body.email, req.body.passwords];
 
-//CREATE mybooks
+    db.query(sql, params, (err, result) =>{
+            if (err) {
+                return console.log(err.message);
+              }
+              
+              return res.redirect('login.html');
+    });
+});
+app.post('/login', function(request, response) {
+	// Capture the input fields
+	let email = request.body.email;
+	let passwords = request.body.passwords;
+	// Ensure the input fields exists and are not empty
+	if (email && passwords) {
+		// Execute SQL query that'll select the account from the database based on the specified username and password
+		var loginTest = new login(db);
+        loginTest.auth(email,passwords, function (error, result)
+        {
+            if (result){
+                // Authenticate the user
+                //request.session.loggedin = true;
+                //request.session.email = email;
+                    // Redirect to home page
+                    response.redirect('search.html');
+            }  else {
+				response.send('Incorrect Username and/or Password!');
+			}			
+			response.end();
+        });
+        
+	} else {
+		response.send('Please enter Username and Password!');
+		response.end();
+	}
+});
+
+//CREATE myBooks
 app.post('/api/mybooks', ({body}, res) => {
     const errors = inputCheck(body, 'title', 'author', 'genre');
     if(errors){
@@ -171,8 +228,8 @@ app.get('/api/mybooks/:id', (req, res) =>{
 
 //single user route
 app.get('/api/users/:id', (req, res) =>{
-    const sql = `SELECT * FROM users WHERE id = ?`;
-    const params = [req.params.id];
+    const sql = `SELECT * FROM users WHERE email = ? and passwords = ?`;
+    const params = [req.params.email,passwords];
 
     db.query(sql, params, (err, row) =>{
         if(err){
@@ -196,3 +253,8 @@ res.status(404).end();
 app.listen(PORT, ()=>{
     console.log(`Server Running on PORT ${PORT}`);
 });
+
+
+app.get('/', function(req,res){
+    res.sendFile(path.join(__dirname,'/Public/login.html'));
+  });
