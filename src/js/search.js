@@ -6,44 +6,39 @@ $(document).ready(function() {
     var placeHldr = '<img src="https://via.placeholder.com/150">';
     var searchData;
   
-    //listener for search button
+
     $("#search").click(function() {
-      outputList.innerHTML = ""; //empty html output
+      outputList.innerHTML = ""; 
       document.body.style.backgroundImage = "url('')";
        searchData = $("#search-box").val();
-       //handling empty search input field
        if(searchData === "" || searchData === null) {
          displayError();
        }
       else {
-         // console.log(searchData);
-         // $.get("https://www.googleapis.com/books/v1/volumes?q="+searchData, getBookData()});
+
          $.ajax({
             url: bookUrl + searchData,
             dataType: "json",
             success: function(response) {
               console.log(response)
               if (response.totalItems === 0) {
-                alert("no result!.. try again")
+                alert("Try again. No results.")
               }
               else {
-                $("#title").animate({'margin-top': '5px'}, 1000); //search box animation
+                $("#title").animate({'margin-top': '5px'}, 1000); 
                 $(".book-list").css("visibility", "visible");
                 displayResults(response);
               }
             },
             error: function () {
-              alert("Something went wrong.. <br>"+"Try again!");
+              alert("Something went wrong... <br>"+"Try again!");
             }
           });
         }
-        $("#search-box").val(""); //clearn search box
+        $("#search-box").val(""); 
      });
   
-     /*
-     * function to display result in index.html
-     * @param response
-     */
+
      function displayResults(response) {
         for (var i = 0; i < response.items.length; i+=2) {
           item = response.items[i];
@@ -62,7 +57,6 @@ $(document).ready(function() {
           bookIsbn2 = item2.volumeInfo.industryIdentifiers[1].identifier
           bookImg2 = (item2.volumeInfo.imageLinks) ? item2.volumeInfo.imageLinks.thumbnail : placeHldr ;
   
-          // in production code, item.text should have the HTML entities escaped.
           outputList.innerHTML += '<div class="searcharea">' +
                                   formatOutput(bookImg1, title1, author1, publisher1, bookLink1, bookIsbn) +
                                   formatOutput(bookImg2, title2, author2, publisher2, bookLink2, bookIsbn2) +
@@ -72,15 +66,10 @@ $(document).ready(function() {
         }
      }
   
-     /*
-     * card element formatter using es6 backticks and templates (indivial card)
-     * @param bookImg title author publisher bookLink
-     * @return htmlCard
-     */
+    
      function formatOutput(bookImg, title, author, publisher, bookLink, bookIsbn) {
-       // console.log(title + ""+ author +" "+ publisher +" "+ bookLink+" "+ bookImg)
-       var viewMyBooks = 'mybooks.html?isbn='+bookIsbn; //constructing link for bookviewer
-       var viewUrl = 'book.html?isbn='+bookIsbn; //constructing link for bookviewer
+       var viewMyBooks = 'mybooks.html?isbn='+bookIsbn;
+       var viewUrl = 'book.html?isbn='+bookIsbn;
        var htmlCard = `
        <div class="searcharea-output-section">
          <div class="searchcards" style="">
@@ -103,7 +92,6 @@ $(document).ready(function() {
        return htmlCard;
      }
   
-     //handling error for empty search box
      function displayError() {
        alert("Please enter something you would like to search.")
      }
