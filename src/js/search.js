@@ -80,7 +80,7 @@ $(document).ready(function() {
      function formatOutput(bookImg, title, author, publisher, bookLink, bookIsbn) {
        // console.log(title + ""+ author +" "+ publisher +" "+ bookLink+" "+ bookImg)
        var viewUrl = 'mybooks.html?isbn='+bookIsbn; //constructing link for bookviewer
-       var viewUrl2 = 'myreadinglist.html?isbn='+bookIsbn; //constructing link for bookviewer
+       var viewBook = 'mybooks.html?isbn='+bookIsbn; //constructing link for bookviewer
        var htmlCard = `
        <div class="searcharea-output-section">
          <div class="searchcards" style="">
@@ -93,8 +93,8 @@ $(document).ready(function() {
                  <h5 class="card-title">${title}</h5>
                  <p class="card-text">Author: ${author}</p>
                  <p class="card-text">Publisher: ${publisher}</p><br />
-                 <a target="_blank" href="${viewUrl}" class="addbooksbtn">Add to My Books</a><br /><br />
-                 <a target="_blank" href="${viewUrl2}" class="addbooksbtn">Add to Reading List</a>
+                 <a href="${viewUrl}" class="addbooksbtn">Add to My Books</a>
+                 <a href="${viewBook}" class="addbooksbtn">Read Book</a>
                </div>
              </div>
            </div>
