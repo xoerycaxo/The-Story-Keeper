@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.js" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&family=Cormorant+SC:wght@300;400&family=Quicksand&family=Roboto:wght@100;300;400&family=Square+Peg&family=Uchen&display=swap" rel="stylesheet">
@@ -27,59 +28,59 @@
                 <li><a href="./mybooks.html">
                         <in>My Books</in>
                     </a></li>
-                <li>
-                        <in><a href="./myreadinglist.html" >My Reading List</in></a>
-                    </li>
+                
                 <li>
                         <in><a href="./login.html" >Log Out</in></a>
                     </li>
             </ul>
         </nav>
     </header>
-    <div class="search">
-      <input
-        type="text"
-        name="search"
-        size="15"
-        maxlength="30"
-        placeholder=" Search"
-        class="search-bar"
-      />
-      <button type="submit" class="search-btn" >Search</button>
-    </div>
-<section class="cards"> 
-    <img src="./assets/img/heart.png" class="heart" alt="A heart for adding book to wish list" height="50px"/>
-    <img src="./assets/img/done-heart.png" class="done-heart" alt="A heart for adding book to wish list" height="55px"/>
-   <img src="./assets/img/checkmark.png" class="checkmark" alt="A checkmark for adding books to my books" height="50px"/>
-    <img src="./assets/img/done-checkmark-2.png" class="done-checkmark" alt="A checkmark for adding books to my books" height="50px"/>
-    <div class="book-cov" margin-top="20px"></div>
-    <h3 class="card-title">Book Title</h3>
-    <p class="author">Author: </p>
-    
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star"></span>
-<span class="fa fa-star"></span>
-    <div class="divider"></div>
-    <p class="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-        Perferendis maxime impedit veritatis facilis architecto aspernatur ea, pariatur numquam explicabo culpa, 
-        quasi aliquid voluptatum est atque ad nulla iusto laborum aut.</p>
-</section>
-<!-- Carousel
-     Flickity HTML init -->
-<!--<div class="gallery js-flickity"
-  data-flickity-options='{ "wrapAround": true }'>
-  <div class="gallery-cell"></div>
-  <div class="gallery-cell"></div>
-  <div class="gallery-cell"></div>
-  <div class="gallery-cell"></div>
-  <div class="gallery-cell"></div>
-</div>
-<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>-->
-<script src="../src/js/search.js"></script>
-  </body>
-  <footer>
+  
+      <div class="container">
+        <div id="title" class="center">
+          <h1 id="header" class="text-center mt-5">Search</h1>
 
-  </footer>
-</html>
+
+          <script type="text/x-handlebars-template" id="template">
+            <h1>{{title}}</h1>
+            <ol>
+                {{#each list}}
+                <li>{{this.name}}</li>
+                {{/each}}
+            </ol>
+        </script>
+        <div id="output"></div>
+        <button onclick="fill_template()">Our Favorites</button>
+
+
+          <div class="row">
+            <div id="input" class="input-group mx-auto col-lg-6 col-md-8 col-sm-12">
+              <input id="search-box" type="text" class="form-control" placeholder="Search">
+              <button id="search" class="addbooksbtn" onclick="">Search</button>
+          </div>
+          </div>
+        </div>
+        <div class="book-list" >
+          <h2 class="text-center">Results</h2>
+          <div id="list-output" class="listoutput">
+            <div class="row">
+              <!-- card  -->
+  
+            </div>
+  
+          </div>
+        </div>
+      </div>
+  
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      
+      <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+      <link rel="stylesheet" href="./assets/css/styles.css">
+      <script src="../src/js/search.js"></script>
+    </body>
+
+ 
+    
+  </html>
