@@ -41,17 +41,6 @@
           <h1 id="header" class="text-center mt-5">Search</h1>
 
 
-          <script type="text/x-handlebars-template" id="template">
-            <h1>{{title}}</h1>
-            <ol>
-                {{#each list}}
-                <li>{{this.name}}</li>
-                {{/each}}
-            </ol>
-        </script>
-        <div id="output"></div>
-        <button onclick="fill_template()">Our Favorites</button>
-
 
           <div class="row">
             <div id="input" class="input-group mx-auto col-lg-6 col-md-8 col-sm-12">
@@ -71,7 +60,55 @@
           </div>
         </div>
       </div>
+
+
+      <!--Handlebars-->
+      <div class="recommend">
+        <!--Our Favorites-->
+      <script type="text/x-handlebars-template" id="template">
+        <h1>{{title}}</h1>
+        <ul>
+            {{#each list}}
+            <li>{{this.name}}</li>
+            {{/each}}
+        </ul>
+        
+        
+    </script>
+    <div id="output"></div>
+    <button class="addbooksbtn" onclick="fill_template()">Our Favorites</button>
+
+
+    <!--Trending-->
+    <script type="text/x-handlebars-template" id="template2">
+      <h1>{{title}}</h1>
+      <ul>
+          {{#each list}}
+          <li>{{this.name}}</li>
+          {{/each}}
+      </ul>
+      
+  </script>
+  <div id="output"></div>
+  <button class="addbooksbtn" onclick="fill_template2()">Trending</button>
+
+  <!--Weekly Picks-->
+  <script type="text/x-handlebars-template" id="template3">
+    <h1>{{title}}</h1>
+    <ul>
+        {{#each list}}
+        <li>{{this.name}}</li>
+        {{/each}}
+    </ul>
+    
+</script>
+<div id="output"></div>
+<button class="addbooksbtn" onclick="fill_template3()">Weekly Picks</button>
   
+<!--End Handlebars-->
+
+
+
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
       
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
@@ -79,6 +116,9 @@
       <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
       <link rel="stylesheet" href="./assets/css/styles.css">
       <script src="../src/js/search.js"></script>
+    </div>
+
+
     </body>
 
  

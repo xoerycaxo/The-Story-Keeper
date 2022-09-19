@@ -99,6 +99,7 @@ $(document).ready(function() {
 
   //HANDLEBARS
 
+  // Our Favorites
   function fill_template() {
     var data = {
         title: "Our Favorites",
@@ -114,4 +115,40 @@ $(document).ready(function() {
         noEscape: true
     })
     document.querySelector("#output").innerHTML = filled;
+}
+
+// Trending
+function fill_template2() {
+  var data = {
+      title: "Trending",
+      list: [
+          {name: "How To Bake Everything by Maraminoff, Amy Matthew"},
+          {name: "Fashion and Its Social Agendas by Diana Crane"},
+          {name: "Funny You Should Ask by Elissa Sussman"},
+          {name: "Planetary Health by Samuel Myers, Howard Frumkin"}
+      ]
+  };
+  var template2 = Handlebars.compile(document.querySelector("#template").innerHTML);
+  var filled = template2(data, {
+      noEscape: true
+  })
+  document.querySelector("#output").innerHTML = filled;
+}
+
+// Weekly Picks
+function fill_template3() {
+  var data = {
+      title: "Weekly Picks",
+      list: [
+          {name: "Funny: The Book by David Misch"},
+          {name: "Furiously Happy by Jenny Lawson"},
+          {name: "Funny You Should Ask by Elissa Sussman"},
+          {name: "Dangerously Funny by David Bianculli"}
+      ]
+  };
+  var template3 = Handlebars.compile(document.querySelector("#template").innerHTML);
+  var filled = template3(data, {
+      noEscape: true
+  })
+  document.querySelector("#output").innerHTML = filled;
 }
