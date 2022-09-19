@@ -96,3 +96,22 @@ $(document).ready(function() {
      }
   
   });
+
+  //HANDLEBARS
+
+  function fill_template() {
+    var data = {
+        title: "Our Favorites",
+        list: [
+            {name: "JavaScript and JQuery by Jon Duckett"},
+            {name: "Learning Web Design by Jennifer Robbins"},
+            {name: "Learn to Code HTML and CSS by Shay Howe"},
+            {name: "JavaScript for Kids by Nick Morgan"}
+        ]
+    };
+    var template = Handlebars.compile(document.querySelector("#template").innerHTML);
+    var filled = template(data, {
+        noEscape: true
+    })
+    document.querySelector("#output").innerHTML = filled;
+}
