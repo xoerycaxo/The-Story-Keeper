@@ -16,6 +16,12 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname,'./public')));
 app.use(helmet());
 
+app.use(express.static(path.join(__dirname, '/src/js')));
+
+app.get('/search', function(req, res) {
+    res.sendFile(path.join(__dirname + '/Public/search.html'));
+});
+
 //express middleware
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());

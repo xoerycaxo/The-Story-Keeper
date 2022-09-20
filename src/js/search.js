@@ -15,6 +15,7 @@ $(document).ready(function() {
        }
       else {
 
+
          $.ajax({
             url: bookUrl + searchData,
             dataType: "json",
@@ -67,6 +68,28 @@ $(document).ready(function() {
   
     
      function formatOutput(bookImg, title, author, publisher, bookLink, bookIsbn) {
+
+      localStorage.setItem(title, author, publisher);
+      var getData = 
+{
+  //  "firstData"
+   "Author":author,
+   "Publisher": publisher
+}
+localStorage.setItem(title, JSON.stringify(getData ));
+
+var val = localStorage.getItem(title);
+
+// const button = document.getElementById('addbooks');
+
+// button.addEventListener("click",(event)=> {
+//   event.preventDefault() // only if you want to prevent the action
+
+//   //here you can access to your local store items like:
+//   const a = localStorage.getItem(title);
+// });
+
+
        var viewMyBooks = 'mybooks.html?isbn='+bookIsbn;
        var viewUrl = 'book.html?isbn='+bookIsbn;
        var htmlCard = `
@@ -81,22 +104,36 @@ $(document).ready(function() {
                  <h5 class="card-title">${title}</h5>
                  <p class="card-text">Author: ${author}</p>
                  <p class="card-text">Publisher: ${publisher}</p><br />
-                 <a href="${viewMyBooks}" class="addbooksbtn">Add to My Books</a><br /><br />
+                 <button id="addbook" "class="addbooksbtn" onclick="passValues()">Add to My Books</button><br /><br />
                  <a target="_blank" href="${viewUrl}" class="addbooksbtn">View Book</a>
                </div>
              </div>
            </div>
-         </div>
+         </div>        
        </div>`
        return htmlCard;
      }
+
+    //  <input id="addbook" type="submit" value="click" onclick="passValues()"/>
+//      function passValues(){
+//           localStorage.setItem(title, author, publisher);
+//      var getData = 
+// {
+//    //  "firstData"
+//    "Author":author,
+//    "Publisher": publisher
+// }
+//  localStorage.setItem(title, JSON.stringify(getData ));
+
+// var val = localStorage.getItem(title);
+// };
   
      function displayError() {
        alert("Please enter something you would like to search.")
      }
-  
   });
 
+   //  <a href="${viewMyBooks}" class="addbooksbtn"> Add to My Books</a><br /><br />
   //HANDLEBARS
 
   function fill_template() {
