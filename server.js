@@ -1,4 +1,3 @@
-var http = require('http');
 var path = require("path");
 var bodyParser = require('body-parser');
 var helmet = require('helmet');
@@ -8,9 +7,26 @@ const express = require('express');
 const inputCheck = require('./utils/inputCheck');
 var login = require('./src/js/login');
 
+const sequelize = require("./config/connection");
+const session = require('express-session');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const routes = require("./routes");
+
 //PORT designation and the app expression
 const PORT = process.env.PORT || 3002;
 const app = express();
+
+const sess = {
+    secret: 'Super secret secret',
+    cookie: {},
+    resave: false,
+    saveUninitialized: true,
+    store: new SequelizeStore({
+      db: sequelize
+    })
+  };
+  
+  app.use(session(sess));
 //--
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname,'./public')));
@@ -31,11 +47,11 @@ const db = mysql.createConnection(
     console.log(`Connected to mystories database.`)
 );
 
-//app.get("/H", (req, res)=>{
-    //res.json(
-   //     "Server is running"
-   // )
-//})
+app.get("/H", (req, res)=>{
+    res.json(
+       "Server is running"
+   )
+})
 
 // //test connection (successful)
 // app.get("/", (req, res)=>{
@@ -89,27 +105,28 @@ app.delete('/api/users/:id', (req, res) => {
     });
 
 //CREATE user
-app.post('/api/users', ({body}, res) => {
-    const errors = inputCheck(body, 'first_name', 'last_name', 'email', 'passwords');
-    if(errors){
-        res.status(400).json({error: errors});
-        return;
-    }
-    const sql = `INSERT INTO users (first_name, last_name, email, passwords)
-    VALUES (?,?,?,?)`;
-    const params = [body.first_name, body.last_name, body.email, body.passwords];
+// app.post('/api/users', ({body}, res) => {
+//     const errors = inputCheck(body, 'first_name', 'last_name', 'email', 'passwords');
+//     if(errors){
+//         res.status(400).json({error: errors});
+//         return;
+//     }
+//     const sql = `INSERT INTO users (first_name, last_name, email, passwords) VALUES (?,?,?,?)`;
+//     const params = [body.first_name, body.last_name, body.email, body.passwords];
 
-    db.query(sql, params, (err, result) =>{
-        if(err){
-            res.status(400).json({error: err.message});
-            return;
-        }
-        res.json({
-            message: 'success',
-            data: body
-        });
-    });
-});
+//     db.query(sql, params, (err, result) => {
+//         console.log(err);
+//         console.log(result);
+//         if(err){
+//             res.status(400).json({error: err.message});
+//             return;
+//         }
+//         res.json({
+//             message: 'success',
+//             data: result
+//         });
+//     });
+// });
 
 app.post('/add', function(req, res){
   
@@ -227,34 +244,34 @@ app.get('/api/mybooks/:id', (req, res) =>{
 });
 
 //single user route
-app.get('/api/users/:id', (req, res) =>{
-    const sql = `SELECT * FROM users WHERE email = ? and passwords = ?`;
-    const params = [req.params.email,passwords];
+// app.get('/api/users/:id', (req, res) =>{
+//     const sql = `SELECT * FROM users WHERE email = ? and passwords = ?`;
+//     const params = [req.params.email,passwords];
 
-    db.query(sql, params, (err, row) =>{
-        if(err){
-            res.status(400).json({error:err.message});
-            return;
-        }
-        res.json({
-            message: 'success',
-            data: row
-        });
-    });
-});
-
-
-//route to handle user req not supported by app
-app.use((req, res)=>{
-res.status(404).end();
-});
-
-//init express
-app.listen(PORT, ()=>{
-    console.log(`Server Running on PORT ${PORT}`);
-});
-
+//     db.query(sql, params, (err, row) =>{
+//         if(err){
+//             res.status(400).json({error:err.message});
+//             return;
+//         }
+//         res.json({
+//             message: 'success',
+//             data: row
+//         });
+//     });
+// });
 
 app.get('/', function(req,res){
     res.sendFile(path.join(__dirname,'/Public/login.html'));
   });
+
+app.use(routes);
+
+//route to handle user req not supported by app
+app.use((req, res)=>{
+  res.status(404).end();
+});
+
+//init express
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log('Now listening'));
+});
