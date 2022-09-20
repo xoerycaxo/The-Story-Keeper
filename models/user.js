@@ -16,7 +16,7 @@ Users.init({
         primaryKey: true,
         autoIncrement: true,
         validate: {
-          len: [10],
+          len: [6, 30],
         },
       },
       first_name: {
