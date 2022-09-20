@@ -2,9 +2,10 @@ $(document).ready(function() {
     var item, tile, author, publisher, bookLink, bookImg;
     var outputList = document.getElementById("list-output");
     var bookUrl = "https://www.googleapis.com/books/v1/volumes?q=";
-    var apiKey = "key=AIzaSyDtXC7kb6a7xKJdm_Le6_BYoY5biz6s8Lw";
+    var apiKey = "&key=AIzaSyDtXC7kb6a7xKJdm_Le6_BYoY5biz6s8Lw";
     var placeHldr = '<img src="./assets/img/placeholder.png">';
     var searchData;
+    // var server = require('/server.js');
   
 
     $("#search").click(function() {
@@ -14,7 +15,7 @@ $(document).ready(function() {
          displayError();
        }
       else {
-
+        console.log(bookUrl + searchData)
          $.ajax({
             url: bookUrl + searchData,
             dataType: "json",

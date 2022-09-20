@@ -32,6 +32,7 @@ app.post('/api/users', ({body}, res) => {
 
 //CREATE mybooks
 app.post('/api/mybooks', ({body}, res) => {
+   console.log(body)
     const errors = inputCheck(body, 'title', 'author', 'genre');
     if(errors){
         res.status(400).json({error: errors});
@@ -48,6 +49,7 @@ db.query(sql, params, (err, result) =>{
     res.json({
         message: 'success',
         data: body
+        
 });
 });
 });

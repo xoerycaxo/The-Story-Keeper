@@ -5,7 +5,7 @@ require('dotenv').config()
 const mysql = require('mysql2');
 const express = require('express');
 const inputCheck = require('./utils/inputCheck');
-var login = require('./src/js/login');
+var login = require('./Public/src/js/login');
 
 const sequelize = require("./config/connection");
 const session = require('express-session');
@@ -52,6 +52,7 @@ app.get("/H", (req, res)=>{
        "Server is running"
    )
 })
+
 
 // //test connection (successful)
 // app.get("/", (req, res)=>{
