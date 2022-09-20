@@ -7,9 +7,10 @@
     <title>Story Keeper</title>
     <link rel="stylesheet" href="./assets/css/styles.css" />
     <link href="./assets/img/favicon.ico" rel="icon" type="image/x-icon" />
-    <link href="./assets/css/carousel.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.js" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&family=Cormorant+SC:wght@300;400&family=Quicksand&family=Roboto:wght@100;300;400&family=Square+Peg&family=Uchen&display=swap" rel="stylesheet">
   </head>
   <body>
     <header>
@@ -20,42 +21,58 @@
         </div>
         <nav>
             <ul>
-                <li><a href="">
-                        <in>My Reading List</in>
+                <li><a href="./mybooks.html">
+                        <in>My Books</in>
                     </a></li>
-                <li><a href="">
-                        <in>Wish List</in>
-                    </a></li>
-                <li><a href="">
-                        <in>Log Out</in>
-                    </a></li>
+                
+                <li>
+                        <in><a href="./login.html" >Log Out</in></a>
+                    </li>
             </ul>
         </nav>
     </header>
-    <div class="search">
-      <input
-        type="text"
-        name="search"
-        size="15"
-        maxlength="30"
-        placeholder=" Search"
-        class="search-bar"
-      />
-      <button type="submit" class="search-btn" >Search</button>
+  
+      <div class="container">
+        <div id="title" class="center">
+          <h1 id="header" class="text-center mt-5">Search</h1>
+
+
+
+          <div class="row">
+            <div id="input" class="input-group mx-auto col-lg-6 col-md-8 col-sm-12">
+              <input id="search-box" type="text" class="form-control" placeholder="Search">
+              <button id="search" class="addbooksbtn" onclick="">Search</button>
+          </div>
+          </div>
+        </div>
+        <div class="book-list" >
+          <h2 class="text-center">Results</h2>
+          <div id="list-output" class="listoutput">
+            <div class="row">
+              <!-- card  -->
+  
+            </div>
+  
+          </div>
+        </div>
+      </div>
+
+
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type=”text/javascript”></script>
+      <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+      <link rel="stylesheet" href="./assets/css/styles.css">
+      
     </div>
 
-<!-- Flickity HTML init -->
-<div class="gallery js-flickity"
-  data-flickity-options='{ "wrapAround": true }'>
-  <div class="gallery-cell"></div>
-  <div class="gallery-cell"></div>
-  <div class="gallery-cell"></div>
-  <div class="gallery-cell"></div>
-  <div class="gallery-cell"></div>
-</div>
-<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-  </body>
-  <footer>
+    
+    <script src="./src/js/search.js"></script>
+    </body>
 
-  </footer>
-</html>
+ 
+    
+  </html>

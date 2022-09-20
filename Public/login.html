@@ -14,35 +14,37 @@
     <div class="wrapper">
         <img src="./assets/img/open-book.png" height="105px"/>
       <form
-        action="http://127.0.0.1:5500/Public/login.html"
+        action="/login"
         class="form"
-        method="get"
+        method="post"
         id="login"
       >
         <h4 class="title">My Account</h4>
         <input
           class="box"
-          type="email"
+          type="name"
           name="email"
           id="email"
           maxlength="30"
           size="15"
-          placeholder=" username"
+          placeholder=" email"
         />
         <input
           class="box"
           type="password"
-          name="password"
+          name="passwords"
+          id="passwords"
           size="15"
           maxlength="30"
           placeholder=" password"
         />
         <br />
-        <button class="btn-log" type="button" name="login">Login</button> <br />
+        <button class="btn-log" type="submit" name="login" id="submit">Log In</button> <br />
         <p class="ask"> Don't have an account yet?</p><br/>
         <a class="sign-up-link" href="./signup.html">Sign up</a>
       </form>
     </div>
+    <!-- <script src="../src/js/login.js"></script> -->
   </body>
   <footer></footer>
 </html>
