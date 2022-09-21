@@ -267,7 +267,7 @@ img{
     margin-top: 50px;
     width: 30%;
     border: solid var(--second) 2px;
-    border-radius: 4px;
+    border-radius: 5px;
 }
 .addbooksbtn{
 padding: 6px 20px;
@@ -315,6 +315,7 @@ header a{
 }
 header a:hover{
     color: var(--second);
+    text-decoration: none;
 }
 header h1{
     color: var(--fourth);
@@ -519,5 +520,36 @@ h5.card-title{
     text-align: center;
     color: var(--second);
     box-shadow: 10px 15px 20px 3px var(--fourth);
+    
+}
+
+/*BOOK PAGE*/
+
+.bookcontainer {
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.bookpageheader {
+    display: flex;
+    justify-content: center;
+}
+
+.backtosearch {
+    font-size: large;
+    color: #112D4E;
+    padding-top: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* Recommend Search Section */
+
+.recommend {
+    display: flex;
+    justify-content: center;
     
 }

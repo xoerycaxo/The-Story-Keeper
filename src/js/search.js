@@ -3,18 +3,15 @@ $(document).ready(function() {
     var outputList = document.getElementById("list-output");
     var bookUrl = "https://www.googleapis.com/books/v1/volumes?q=";
     var apiKey = "key=AIzaSyDtXC7kb6a7xKJdm_Le6_BYoY5biz6s8Lw";
-    var placeHldr = '<img src="https://via.placeholder.com/150">';
+    var placeHldr = '<img src="./assets/img/placeholder.png">';
     var searchData;
-<<<<<<< HEAD
     //listener for search button
     $("#search").click(function() {
       outputList.innerHTML = ""; //empty html output
-=======
   
 
     $("#search").click(function() {
       outputList.innerHTML = ""; 
->>>>>>> c56982aef7c4e5f4a2d1b20083d469e9a1d07118
        searchData = $("#search-box").val();
        if(searchData === "" || searchData === null) {
          displayError();
@@ -80,7 +77,7 @@ $(document).ready(function() {
          <div class="searchcards" style="">
            <div class="row no-gutters">
              <div class="col-md-4">
-               <img src="${bookImg}" class="card-img" alt="...">
+               <img src="${bookImg}" class="card-img" alt="">
              </div>
              <div class="col-md-8">
                <div class="card-body">
@@ -101,4 +98,4 @@ $(document).ready(function() {
        alert("Please enter something you would like to search.")
      }
   
-  });
+  })});
