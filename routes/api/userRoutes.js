@@ -42,7 +42,9 @@ router.post('/signup', async (req, res) => {
     }
 });
 
+
 router.post('/login', async (request, response) => {
+    console.log(request.body.email)
     try {
         // Capture the input fields
 	    let email = request.body.email;
@@ -56,21 +58,23 @@ router.post('/login', async (request, response) => {
                 throw 'No user found matching email/password';
             }
             // Validate user
-            const isValid = results.checkPassword(passwords);
+            // const isValid = results.checkPassword(passwords);
 
-            if (!isValid) {
-                throw 'Invalid email or password';
-            }
+            // if (!isValid) {
+            //     throw 'Invalid email or password';
+            // }
 
             const user = results.get({plain: true});
-
-            request.session.save(() => {
-                request.session.user_id = user.id;
-                request.session.email = user.email;
-                request.session.loggedIn = true;
-            });
-
-            response.status(200).json(user);
+console.log(user)
+user.loggedIn = true
+            // request.session.save(() => {
+            //     request.session.user_id = user.id;
+            //     request.session.email = user.email;
+            //     request.session.loggedIn = true;
+            // });
+            request.session.user = user
+        console.log(request.session)
+        response.redirect('/search.html');
 	    } else {
 	    	response.status(400).json('Please enter Username and Password!');
 	    	response.end();
