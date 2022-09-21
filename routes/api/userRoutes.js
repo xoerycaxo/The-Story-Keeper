@@ -35,7 +35,7 @@ router.post('/signup', async (req, res) => {
             req.session.loggedIn = true;
         });
 
-        res.json(user);
+        response.redirect('/search');
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -74,7 +74,7 @@ user.loggedIn = true
             // });
             request.session.user = user
         console.log(request.session)
-        response.redirect('/search.html');
+        response.redirect('/search');
 	    } else {
 	    	response.status(400).json('Please enter Username and Password!');
 	    	response.end();
