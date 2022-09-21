@@ -84,7 +84,9 @@ body{
     letter-spacing: 1px;
     margin-left: 10px;
 }
-
+.btn-log, .login{
+    background-color: var(--fourth);
+}
 .btn-log a{
     text-decoration: none;
     background-color: transparent;
@@ -119,7 +121,7 @@ img{
 .wrapper2{
     background-color: var(--fifth);
     width: 400px;
-    height: 400px;
+    height: 450px;
     position: relative;
     margin: auto;
     box-shadow: 8px 8px 30px 3px var(--fourth);
@@ -163,6 +165,9 @@ img{
     margin-left: 65px;
     margin-bottom:-15px ;
     margin-top: 15px;
+}
+input#name.box{
+    padding-left: 5px;
 }
 /*error class*/
 .box-error{
