@@ -5,8 +5,15 @@ var startFile = function() {
     var apiKey = "&key=AIzaSyDtXC7kb6a7xKJdm_Le6_BYoY5biz6s8Lw";
     var placeHldr = '<img src="./assets/img/placeholder.png">';
     var searchData;
+
+    //listener for search button
+    $("#search").click(function() {
+      outputList.innerHTML = ""; //empty html output
+
    
+
     // var server = require('/server.js');
+
   
   const search = document.getElementById('search')?.addEventListener('click', async () => {
     outputList.innerHTML = ""; 
@@ -88,10 +95,10 @@ var startFile = function() {
              <div class="col-md-8">
                <div class="card-body">
                  <h5 class="card-title">${title}</h5>
-                 <p class="card-text">Author: ${author}</p>
-                 <p class="card-text">Publisher: ${publisher}</p><br />
+                 <p class="card-text">  Author: <span> ${author} </span></p>
+                 <p class="card-text">  Publisher:  <span>${publisher} </span></p><br />
                  <button class="addbooksbtn" id="addToBooks" data-index="${i}" onclick="saveBook(this)">Add to My Books</button><br /><br />
-                 <a target="_blank" href="${viewUrl}" class="addbooksbtn">View Book</a>
+                 <a href="${viewUrl}" class="addbooksbtn">View Book</a>
                </div>
              </div>
            </div>
@@ -103,11 +110,6 @@ var startFile = function() {
      function displayError() {
        alert("Please enter something you would like to search.")
      }
-
-     
-    
-      
-  }();
 
   const addToBooks = document.querySelector("#addToBooks");
 
@@ -146,3 +148,5 @@ async function saveBook(e) {
     console.log("did not save data");
   }
 }
+}
+)}
