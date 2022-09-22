@@ -1,3 +1,4 @@
+const { default: axios } = require("axios");
 const { Books } = require("../../models");
 
 const router = require("express").Router();
@@ -26,6 +27,22 @@ router.post("/", async (req, res) => {
 console.log(err)
 res.status(500).json(err)
     }
-}) 
+});
+
+router.post("/getGoogleBooks", async (req, res) => {
+    console.log(req.body);
+
+    try {
+        const results = await axios.get(req.body.url);
+        const books = results.data;
+
+        console.log(books);
+
+        res.status(200).json(books);
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err)
+    }
+});
 
 module.exports = router;
