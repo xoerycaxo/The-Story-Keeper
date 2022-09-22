@@ -11,7 +11,7 @@ Project 2
 
 ## Description
 
-The Story Keeper is a place to go to make your books more organized. You can store the books you have already read, books you are reading now and books you want to read next. You can use the search bar to look up books. And there is also a place where you can see what others think about that book while putting your own opinion down about the book you read as well. 
+The Story Keeper is a place to go to search for books. Whether its a book someone has suggested to you or even for reasearch purposes. On our website you can also read some full books for free. And also one last amazing feature is the fact that if you find an interesting book that you want to save for later you can with our save book button!
 
 ## Criteria
 
