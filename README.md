@@ -47,7 +47,7 @@ The Story Keeper is a place to go to search for books. Whether its a book someon
 
 1. As a user I want to go to a place I can seach for books I want to read or use for reasearch. 
 2. As a user I want to be able to log on and use the website with ease.
-3. As a user I would like to be able to save the books that eaither peek my interest or need for any other purpose.
+3. As a user I would like to be able to save the books that either peek my interest or need for any other purpose.
 
 ## Usage
 
@@ -83,9 +83,8 @@ To install the project follow these steps:
 
  * Zoey: MySQL, HTML, CSS.
 
-   https://ucfvirtbofsfp-ybx2807.slack.com/team/U03JG860R1U
-
-
+   https://ucfvirtbofsfp-ybx2807.slack.com/team/U03JG860R1U 
+ 
 
 
 
