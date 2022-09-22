@@ -75,17 +75,14 @@ To install the project follow these steps:
 
    https://ucfvirtbofsfp-ybx2807.slack.com/team/U03J883S23Z
 
- * Chloe: CSS, Node and Express.js, Handlebars.
+ * Chloe: JavaScript, Heroku, CSS.
 
    https://ucfvirtbofsfp-ybx2807.slack.com/team/U03JAS6DABG
 
- * Zoey: MySQL, Heroku, New Technology.
+ * Zoey: MySQL, HTML, CSS.
 
    https://ucfvirtbofsfp-ybx2807.slack.com/team/U03JG860R1U
 
- * Paolo: Javascript
-
-   https://ucfvirtbofsfp-ybx2807.slack.com/team/U03HX4WSA14
 
 
 
