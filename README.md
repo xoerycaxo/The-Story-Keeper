@@ -84,6 +84,9 @@ To install the project follow these steps:
  * Zoey: MySQL, HTML, CSS.
 
    https://ucfvirtbofsfp-ybx2807.slack.com/team/U03JG860R1U 
+   
+   * Paolo: JavaScript
+    https://ucfvirtbofsfp-ybx2807.slack.com/team/U03HX4WSA14
  
 
 
@@ -108,6 +111,7 @@ To install the project follow these steps:
     
     Zoey: [nashalysf@gmail.com](#nashalysf@gmail.com)
     
+    Paolo: [ayaladuvan876@gmail.com](#ayaladuvan876@gmail.com)
     
     
 
