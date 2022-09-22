@@ -5,17 +5,15 @@ $(document).ready(function() {
     var apiKey = "&key=AIzaSyDtXC7kb6a7xKJdm_Le6_BYoY5biz6s8Lw";
     var placeHldr = '<img src="./assets/img/placeholder.png">';
     var searchData;
-<<<<<<< HEAD
-<<<<<<< HEAD:src/js/search.js
+
     //listener for search button
     $("#search").click(function() {
       outputList.innerHTML = ""; //empty html output
-=======
-=======
+
    
->>>>>>> 05985e2eb95ded094d53d16352f5286727c7cfe5
+
     // var server = require('/server.js');
->>>>>>> b6d159f0b5ab9fda252657956fe9d3b34bcd7ea7:Public/src/js/search.js
+
   
 
     $("#search").click(function() {
@@ -97,7 +95,7 @@ $(document).ready(function() {
                  <p class="card-text">Author: ${author}</p>
                  <p class="card-text">Publisher: ${publisher}</p><br />
                  <button class="addbooksbtn" id="addToBooks" data-index="${i}" onclick="saveBook(this)">Add to My Books</button><br /><br />
-                 <a target="_blank" href="${viewUrl}" class="addbooksbtn">View Book</a>
+                 <a href="${viewUrl}" class="addbooksbtn">View Book</a>
                </div>
              </div>
            </div>
@@ -109,15 +107,11 @@ $(document).ready(function() {
      function displayError() {
        alert("Please enter something you would like to search.")
      }
-<<<<<<< HEAD
+
   
   })});
-=======
 
-     
-    
-      
-  });
+
 
   const addToBooks = document.querySelector("#addToBooks");
 
@@ -156,5 +150,3 @@ async function saveBook(e) {
     console.log("did not save data");
   }
 }
-
->>>>>>> 05985e2eb95ded094d53d16352f5286727c7cfe5
