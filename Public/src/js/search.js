@@ -1,4 +1,4 @@
-var startFile = function() {
+const startFile = function() {
     var item, title, author, publisher, bookLink, bookImg;
     var outputList = document.getElementById("list-output");
     var bookUrl = "https://www.googleapis.com/books/v1/volumes?q=";
@@ -12,7 +12,7 @@ var startFile = function() {
     // // var server = require('/server.js');
 
   
-  const search = document.getElementById('search')?.addEventListener('click', async () => {
+    document.getElementById('search')?.addEventListener('click', async () => {
     outputList.innerHTML = ""; 
     console.log('test')
     searchData = document.getElementById('search-box').value;
@@ -72,7 +72,7 @@ var startFile = function() {
                                   formatOutput(bookImg1, title1, author1, publisher1, bookLink1, bookIsbn, i) +
                                   formatOutput(bookImg2, title2, author2, publisher2, bookLink2, bookIsbn2, i+1) +
                                   '</div>';
-  
+          saveBook()
           console.log(outputList);
         }
      }
@@ -96,7 +96,7 @@ var startFile = function() {
                  <h5 class="card-title">${title}</h5>
                  <p class="card-text">  Author: <span> ${author} </span></p>
                  <p class="card-text">  Publisher:  <span>${publisher} </span></p><br />
-                 <button class="addbooksbtn" id="addToBooks" data-index="${i}" onclick="saveBook(this)">Add to My Books</button><br /><br />
+                 <button class="addbooksbtn" id="addToBooks" data-index="${i}">Add to My Books</button><br /><br />
                  <a href="${viewUrl}" class="addbooksbtn">View Book</a>
                </div>
              </div>
@@ -112,18 +112,18 @@ var startFile = function() {
 
   const addToBooks = document.querySelector("#addToBooks");
 
-if (addToBooks) {
-  addToBooks.addEventListener("click", () => {
-    console.log("i clicked this")
-  });
-}
+
 
 let response1;
 
-async function saveBook(e) {
-  console.log(response1)
-  console.log(e.dataset.index)
-  const idx = parseInt(e.dataset.index)
+  function saveBook(e) {
+  const bookBtns = document.querySelectorAll('.addbooksbtn')
+  // first element is not the right button starts on index 1
+  for (let i = 1; i < bookBtns.length; i++) {
+    bookBtns[i].addEventListener('click', async (e) => {
+      console.log(response1)
+  console.log(e.target.dataset.index)
+  const idx = parseInt(e.target.dataset.index)
   console.log(idx)
   const data = response1.items[idx]
   console.log(data)
@@ -145,6 +145,8 @@ async function saveBook(e) {
     console.log("save data");
   } else {
     console.log("did not save data");
+  }
+    })
   }
 }
 }()
