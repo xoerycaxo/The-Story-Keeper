@@ -107,6 +107,6 @@ To install the project follow these steps:
     
     Zoey: [nashalysf@gmail.com](#nashalysf@gmail.com)
     
-    Paolo: [ayaladuvan876@gmail.com](#ayaladuvan876@gmail.com)
+    
     
 
