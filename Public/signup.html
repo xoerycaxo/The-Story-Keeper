@@ -14,16 +14,13 @@
     <div class="wrapper2">
         <img src="./assets/img/open-book.png" height="105px"/>
       <form
-        action="/add"
-        class="form"
-        method="post"
-        id="signup"
+        
       >
         <h4 class="title2">Create Account</h4>
         <input
         class="box"
         type="text"
-        id="name"
+        id="firstname"
         name="first_name"
         size="15"
         maxlength="30"
@@ -32,7 +29,7 @@
       <input
         class="box"
         type="text"
-        id="name"
+        id="lastname"
         name="last_name"
         size="15"
         maxlength="30"
@@ -42,7 +39,7 @@
           class="box"
           type="email"
           name="email"
-          id="email"
+          id="signupemail"
           maxlength="30"
           size="15"
           placeholder=" email"
@@ -50,6 +47,7 @@
         <input
           class="box"
           type="password"
+          id="submitpassword"
           name="passwords"
           size="15"
           maxlength="30"
@@ -58,13 +56,14 @@
         <input
           class="box"
           type="password"
+          id="submitpasswordconfirm"
           name="password"
           size="15"
           maxlength="30"
           placeholder=" confirm password"
         />
         <br />
-        <button class="btn-submit" type="submit" name="submit">Submit</button>
+        <button class="btn-submit" type="button" id="signupSubmit" name="submit">Submit</button>
         <p class="ask2"> Already have an account?</p><br/>
         <a class="login-link" href="/login">Log in</a>
       </form>
