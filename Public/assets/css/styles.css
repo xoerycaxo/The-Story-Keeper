@@ -375,6 +375,19 @@ h5.card-title{
 }
 .cards p{
     font-size: 18px;
+    
+}
+.title3{
+    font-weight: bold;
+}
+.card-text{
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+}
+span{
+    color: var(--third);
 }
 .book-cov{
     height: 40%;
@@ -517,7 +530,7 @@ h5.card-title{
     margin: auto 0;
     float: left;
     z-index: 0;
-    height: 90%;
+    height:80%;
     position: relative;
     left: 25px;
     top: 30px;
@@ -548,19 +561,25 @@ h5.card-title{
 .bookcontainer {
     display: flex;
     justify-content: center;
-    padding-top: 25px;
+    padding-top: 100px;
     padding-bottom: 25px;
 }
-.container{
-    border: solid 15px var(--fourth);
-    border-radius: 10px;
-    height: 600px;
-    width: 800px;
+.container3{
+    
+    border-radius: 50px;
+    height: 685px;
+    width: 820px;
     position: absolute;
-    top: 118px;
+    top: 150px;
     z-index: 2;
+    background: radial-gradient(circle at 1.8% 4.8%, rgb(17, 23, 58) 0%, rgb(32, 65, 140) 90%);
 }
-
+.containerp{
+ color: var(--second);
+ text-align: center;
+ position: relative;
+ top: 300px;
+}
 .bookpageheader {
     display: flex;
     justify-content: center;

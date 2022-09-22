@@ -92,8 +92,8 @@ $(document).ready(function() {
              <div class="col-md-8">
                <div class="card-body">
                  <h5 class="card-title">${title}</h5>
-                 <p class="card-text">Author: ${author}</p>
-                 <p class="card-text">Publisher: ${publisher}</p><br />
+                 <p class="card-text">  Author: <span> ${author} </span></p>
+                 <p class="card-text">  Publisher:  <span>${publisher} </span></p><br />
                  <button class="addbooksbtn" id="addToBooks" data-index="${i}" onclick="saveBook(this)">Add to My Books</button><br /><br />
                  <a href="${viewUrl}" class="addbooksbtn">View Book</a>
                </div>
