@@ -51,9 +51,11 @@ The Story Keeper is a place to go to search for books. Whether its a book someon
 
 ## Usage
 
-The project was uploaded to Github with the following repository:
+The project was uploaded to Github with the following repository: https://github.com/xoerycaxo/The-Story-Keeper
 
-You can acess the deployed application with the Heroku link:
+You can acess the deployed application with the Heroku link: https://storykeeper-book-app.herokuapp.com/
+
+The new technology we used: axios which is a fetch request from the backend.
 
 To install the project follow these steps:
 
