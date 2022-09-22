@@ -86,7 +86,8 @@ To install the project follow these steps:
    https://ucfvirtbofsfp-ybx2807.slack.com/team/U03JG860R1U 
    
  * Paolo: JavaScript
-    https://ucfvirtbofsfp-ybx2807.slack.com/team/U03HX4WSA14
+ 
+   https://ucfvirtbofsfp-ybx2807.slack.com/team/U03HX4WSA14
  
 
 
