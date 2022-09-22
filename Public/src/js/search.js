@@ -1,4 +1,4 @@
-$(document).ready(function() {
+var startFile = function() {
     var item, tile, author, publisher, bookLink, bookImg;
     var outputList = document.getElementById("list-output");
     var bookUrl = "https://www.googleapis.com/books/v1/volumes?q=";
@@ -15,38 +15,41 @@ $(document).ready(function() {
     // var server = require('/server.js');
 
   
+  const search = document.getElementById('search')?.addEventListener('click', async () => {
+    outputList.innerHTML = ""; 
+    searchData = document.getElementById('search-box').value;
+    if(searchData === "" || searchData === null) {
+      displayError();
+    }
+    else {
+      body = {
+        url: bookUrl + searchData,
+      }
+      console.log(bookUrl + searchData);
+      const response = await fetch('/api/books/getGoogleBooks', {
+        method: "POST",
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(body),
+      });
 
-    $("#search").click(function() {
-      outputList.innerHTML = ""; 
-       searchData = $("#search-box").val();
-       if(searchData === "" || searchData === null) {
-         displayError();
-       }
-      else {
-        console.log(bookUrl + searchData)
-         $.ajax({
-            url: bookUrl + searchData,
-            dataType: "json",
-            success: function(response) {
-              console.log(response)
-              response1 = response
-              if (response.totalItems === 0) {
-                alert("Try again. No results.")
-              }
-              else {
-                $("#title").animate({'margin-top': '5px'}, 1000); 
-                $(".book-list").css("visibility", "visible");
-                displayResults(response);
-              }
-            },
-            error: function () {
-              alert("Something went wrong... <br>"+"Try again!");
-            }
-          });
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data);
+        response1 = data;
+        if (data.totalItems === 0) {
+          alert("Try again. No results.")
+        } else {
+          document.getElementById('title').style['margin-top'] = '5px';
+          document.querySelector('.book-list').style.visibility = 'visible';
+          displayResults(data);
         }
-        $("#search-box").val(""); 
-     });
-  
+
+      } else {
+        alert("Something went wrong... <br>"+"Try again!");
+      }
+      }
+      document.getElementById('search-box').value = ''; 
+  });
 
      function displayResults(response) {
         for (let i = 0; i < response.items.length; i+=2) {
@@ -92,8 +95,8 @@ $(document).ready(function() {
              <div class="col-md-8">
                <div class="card-body">
                  <h5 class="card-title">${title}</h5>
-                 <p class="card-text">Author: ${author}</p>
-                 <p class="card-text">Publisher: ${publisher}</p><br />
+                 <p class="card-text">  Author: <span> ${author} </span></p>
+                 <p class="card-text">  Publisher:  <span>${publisher} </span></p><br />
                  <button class="addbooksbtn" id="addToBooks" data-index="${i}" onclick="saveBook(this)">Add to My Books</button><br /><br />
                  <a href="${viewUrl}" class="addbooksbtn">View Book</a>
                </div>
@@ -107,11 +110,6 @@ $(document).ready(function() {
      function displayError() {
        alert("Please enter something you would like to search.")
      }
-
-  
-  })});
-
-
 
   const addToBooks = document.querySelector("#addToBooks");
 
@@ -150,3 +148,5 @@ async function saveBook(e) {
     console.log("did not save data");
   }
 }
+}
+)}
