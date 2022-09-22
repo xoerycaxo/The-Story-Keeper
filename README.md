@@ -45,9 +45,9 @@ The Story Keeper is a place to go to search for books. Whether its a book someon
 
 ## User-Story
 
-1. As a user I want to go to a place I can organize my books easily. 
-2. As a user I want to be able to organize them in a way that I can see what I have read and what I may be reading now and be able to store books that I can read next.
-3. As a user I would like to give a rating about the books ive read so that others know if its worth reading. Then I can see what others have rated a book, so that I can see if it seems like a book worth reading.
+1. As a user I want to go to a place I can seach for books I want to read or use for reasearch. 
+2. As a user I want to be able to log on and use the website with ease.
+3. As a user I would like to be able to save the books that eaither peek my interest or need for any other purpose.
 
 ## Usage
 
