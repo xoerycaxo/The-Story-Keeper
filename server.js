@@ -5,7 +5,6 @@ require('dotenv').config()
 const mysql = require('mysql2');
 const express = require('express');
 const inputCheck = require('./utils/inputCheck');
-var login = require('./Public/src/js/login');
 
 const sequelize = require("./config/connection");
 const session = require('express-session');
@@ -29,7 +28,7 @@ const sess = {
   app.use(session(sess));
 //--
 app.use(bodyParser.urlencoded({extended: false}));
-app.use(express.static(path.join(__dirname,'./public')));
+app.use(express.static(path.join(__dirname,'Public')));
 app.use(helmet());
 
 //express middleware
@@ -143,33 +142,33 @@ app.post('/add', function(req, res){
               return res.redirect('login.html');
     });
 });
-app.post('/login', function(request, response) {
-	// Capture the input fields
-	let email = request.body.email;
-	let passwords = request.body.passwords;
-	// Ensure the input fields exists and are not empty
-	if (email && passwords) {
-		// Execute SQL query that'll select the account from the database based on the specified username and password
-		var loginTest = new login(db);
-        loginTest.auth(email,passwords, function (error, result)
-        {
-            if (result){
-                // Authenticate the user
-                //request.session.loggedin = true;
-                //request.session.email = email;
-                    // Redirect to home page
-                    response.redirect('search.html');
-            }  else {
-				response.send('Incorrect Username and/or Password!');
-			}			
-			response.end();
-        });
+// app.post('/login', function(request, response) {
+// 	// Capture the input fields
+// 	let email = request.body.email;
+// 	let passwords = request.body.passwords;
+// 	// Ensure the input fields exists and are not empty
+// 	if (email && passwords) {
+// 		// Execute SQL query that'll select the account from the database based on the specified username and password
+// 		var loginTest = new login(db);
+//         loginTest.auth(email,passwords, function (error, result)
+//         {
+//             if (result){
+//                 // Authenticate the user
+//                 //request.session.loggedin = true;
+//                 //request.session.email = email;
+//                     // Redirect to home page
+//                     response.redirect('search.html');
+//             }  else {
+// 				response.send('Incorrect Username and/or Password!');
+// 			}			
+// 			response.end();
+//         });
         
-	} else {
-		response.send('Please enter Username and Password!');
-		response.end();
-	}
-});
+// 	} else {
+// 		response.send('Please enter Username and Password!');
+// 		response.end();
+// 	}
+// });
 
 //CREATE myBooks
 app.post('/api/mybooks', ({body}, res) => {
@@ -261,9 +260,7 @@ app.get('/api/mybooks/:id', (req, res) =>{
 //     });
 // });
 
-app.get('/', function(req,res){
-    res.sendFile(path.join(__dirname,'/Public/login.html'));
-  });
+
 
 app.use(routes);
 

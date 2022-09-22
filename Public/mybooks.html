@@ -8,7 +8,6 @@
     <link href="./assets/css/styles.css" rel="stylesheet" type="text/css" />
     <link href="./assets/img/favicon.ico" rel="icon" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <script src="../src/js/mybooks.js"></script>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&family=Cormorant+SC:wght@300;400&family=Quicksand&family=Roboto:wght@100;300;400&family=Square+Peg&family=Uchen&display=swap" rel="stylesheet">
 </head>
@@ -21,11 +20,11 @@
         </div>
         <nav>
             <ul>
-                <li><a href="./search.html">
+                <li><a href="/search">
                         <in>Search</in>
                     </a></li>
                 <li>
-                        <in><a href="./login.html" >Log Out</in></a>
+                        <in><a href="/login" >Log Out</in></a>
                     </li>
             </ul>
         </nav>
@@ -38,25 +37,10 @@
             
             <li class="books">
                 <h3 class="book-title">Book Title</h3>
-                <p>Author</p> 
-                <img src="./assets/img/book-mockup.jpg"/>
+                <p class="book-author">Author</p>
+                <img src="./assets/img/book-mockup.jpg" class='book-img'/>
             </li>
-            <li class="books">
-                <h3 class="book-title">Book Title</h3>
-                <p>Author</p>
-                <img src="./assets/img/book-mockup.jpg"/>
-            </li>
-            <li class="books">
-                <h3 class="book-title">Book Title</h3>
-                <p>Author</p>
-                <img src="./assets/img/book-mockup.jpg"/>
-            </li>
-            <li class="books">
-                <h3 class="book-title">Book Title</h3>
-                <p>Author</p>
-                <img src="./assets/img/book-mockup.jpg"/>
-                <span class="fa fa-star checked"></span>
-            </li>
+    
 
         </ul>
        
@@ -67,7 +51,7 @@
     <button class="addbooksbtn">Add Books</button>
 </a>
 </section>
-
+<script src="./src/js/mybooks.js"></script>
 </body>
 
 </html>
