@@ -455,6 +455,7 @@ span{
     font-family: Quicksand;
     color: var(--third);
  }
+
  .backtosearch in:hover{
     background-color: var(--fourth);
     border: none;
@@ -579,10 +580,11 @@ span{
     padding-bottom: 25px;
 }
 .container3{
-    
+    display: flex;
+    justify-content: center;
     border-radius: 50px;
     height: 685px;
-    width: 820px;
+    width: 835px;
     position: absolute;
     top: 150px;
     z-index: 2;
