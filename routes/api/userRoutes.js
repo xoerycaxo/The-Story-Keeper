@@ -67,11 +67,11 @@ router.post('/login', async (request, response) => {
             const user = results.get({plain: true});
 console.log(user)
 user.loggedIn = true
-            // request.session.save(() => {
-            //     request.session.user_id = user.id;
-            //     request.session.email = user.email;
-            //     request.session.loggedIn = true;
-            // });
+            request.session.save(() => {
+                request.session.user_id = user.id;
+                request.session.email = user.email;
+                request.session.loggedIn = true;
+            });
             request.session.user = user
         console.log(request.session)
         response.status(200).json('User logged in')
